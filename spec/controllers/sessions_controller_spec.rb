@@ -71,6 +71,16 @@ describe SessionsController, type: :controller do
     end
   end
 
+  describe "GET #manager_signin" do
+    it "redirects to main room if already authenticated" do
+      user = create(:user)
+      @request.session[:user_id] = user.id
+
+      post :manager_signin
+      expect(response).to redirect_to(room_path(user.main_room))
+    end
+  end
+
   describe "GET #destroy" do
     before(:each) do
       user = create(:user, provider: "greenlight")

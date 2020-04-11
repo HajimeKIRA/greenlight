@@ -268,6 +268,7 @@ ja_JP:
   ldap_error: LDAPサーバーに接続できません。.envファイルのLDAP構成を確認しサーバが実行されていることを確認してください。
   login: サインイン
   login_title: アカウントにサインイン
+  manager_login_title: 管理者ログイン
   mailer:
     user:
       approve:
