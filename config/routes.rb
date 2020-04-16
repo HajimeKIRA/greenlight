@@ -26,8 +26,8 @@ Rails.application.routes.draw do
 
   # Signin/Signup routes.
   get '/signin', to: 'sessions#signin', as: :signin
-  get '/signup', to: 'sessions#new', as: :signup
-  post '/signup', to: 'users#create', as: :create_user
+  get '/signup', to: 'sessions#signin', as: :signup
+#  post '/signup', to: 'users#create', as: :create_user
   get '/ldap_signin', to: 'sessions#ldap_signin', as: :ldap_signin
   get '/manager_signin', to: 'sessions#manager_signin', as: :manager_signin
 
