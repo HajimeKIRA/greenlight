@@ -84,6 +84,14 @@ class RoomsController < ApplicationController
     else
       return redirect_to root_path, flash: { alert: I18n.t("room.invalid_provider") } if incorrect_user_domain
 
+      # Is this room shared?
+      if SharedAccess.exists?(room_id: @room.id)
+        # Shared
+        if @room.access_code && (@room.access_code.nil? || @room.access_code.empty?)
+            return redirect_to root_path, flash: { alert: I18n.t("room.room_share_banned") }
+        end
+      end
+
       show_user_join
     end
   end

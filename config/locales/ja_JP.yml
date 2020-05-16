@@ -511,6 +511,7 @@ ja_JP:
     wait:
       message: 会議はまだ開始されていません。
       auto: 会議が始まると自動的に参加します。
+    room_share_banned: セキュリティエラーが発生しました。
   settings:
     account:
       fullname: フルネーム
